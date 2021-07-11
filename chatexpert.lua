@@ -12,6 +12,18 @@ local function has_value (tab, val)
  
     return false
 end
+local function dump(o)
+    if type(o) == 'table' then
+       local s = '{ '
+       for k,v in pairs(o) do
+          if type(k) ~= 'number' then k = '"'..k..'"' end
+          s = s .. '['..k..'] = ' .. dump(v) .. ','
+       end
+       return s .. '} '
+    else
+       return tostring(o)
+    end
+ end
 if cbox == nil then error("Missing Chat Box") end
 while true do
     event, username, message = os.pullEvent("chat") -- Will be fired when someone sends a chat message
@@ -27,8 +39,9 @@ while true do
         imanager.addItemToPlayer("EAST", 1)
     end
     if message == "REMOVE TRASH" and username == imanager.getOwner()  then cbox.sendMessage("Removing trash from ".. username)
-        for key, value in pairs(imanager.getItems()) do
-            cbox.sendMessage(key.. " ".. value)
+        items = imanager.getItems()
+        for key, value in pairs(items) do
+            print("Items:", dump(items))
             if has_value(t, key) then imanager.removeItemFromPlayer("WEST", value, key) end
         end
     end
