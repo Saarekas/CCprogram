@@ -39,11 +39,12 @@ while true do
         imanager.addItemToPlayer("EAST", 1)
     end
     if message == "REMOVE TRASH" and username == imanager.getOwner()  then cbox.sendMessage("Removing trash from ".. username)
-        items = imanager.getItems()
-        for key, value in pairs(items) do
-            print("Items:", dump(items))
-            if has_value(t, key) then imanager.removeItemFromPlayer("WEST", value, key) end
-        end
+    imanager.removeItemFromPlayer("WEST", 128, "minecraft:cobblestone")
+    imanager.removeItemFromPlayer("WEST", 128, "minecraft:dirt")
+    imanager.removeItemFromPlayer("WEST", 128, "minecraft:sand")
+    imanager.removeItemFromPlayer("WEST", 128, "minecraft:cobblestone")
+    imanager.removeItemFromPlayer("WEST", 128, "minecraft:cobblestone")
+        
     end
     local x, y = monitor.getCursorPos()
     if y ~= h then monitor.setCursorPos(1, y+1) end
