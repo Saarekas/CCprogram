@@ -1,5 +1,5 @@
-controller = peripheral.wrap("left") -- Defines the controller to the left of the computer
-controller.setRelativeMode(true, 1600, 900) -- Convenient Aspect ratio for most screens
+controller = peripheral.find("arController") -- Defines the controller to the left of the computer
+controller.setRelativeMode(true, 1920, 1080) -- Convenient Aspect ratio for most screens
 while true do
   local timer = os.startTimer(1)
   local event, id
