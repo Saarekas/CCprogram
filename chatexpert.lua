@@ -42,8 +42,10 @@ while true do
     imanager.removeItemFromPlayer("WEST", 128, "minecraft:cobblestone")
     imanager.removeItemFromPlayer("WEST", 128, "minecraft:dirt")
     imanager.removeItemFromPlayer("WEST", 128, "minecraft:sand")
-    imanager.removeItemFromPlayer("WEST", 128, "minecraft:cobblestone")
-    imanager.removeItemFromPlayer("WEST", 128, "minecraft:cobblestone")
+    imanager.removeItemFromPlayer("WEST", 128, "minecraft:gravel")
+    imanager.removeItemFromPlayer("WEST", 128, "minecraft:granite")
+    imanager.removeItemFromPlayer("WEST", 128, "minecraft:andesite")
+    imanager.removeItemFromPlayer("WEST", 128, "minecraft:diorite")
         
     end
     local x, y = monitor.getCursorPos()
