@@ -1,5 +1,8 @@
 controller = peripheral.find("arController") -- Defines the controller to the left of the computer
 controller.setRelativeMode(true, 1920, 1080) -- Convenient Aspect ratio for most screens
+if controller == nil then
+    error("Can't find AR Controller")
+end
 while true do
   local timer = os.startTimer(1)
   local event, id
