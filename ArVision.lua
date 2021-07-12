@@ -11,4 +11,5 @@ while true do
   until id == timer
   controller.clear() -- If you don't do this, the texts will draw over each other
   controller.drawRightboundString(os.date(), -10, 10, 0xffffff)
+  sleep(1)
 end
